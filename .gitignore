@@ -1,0 +1,9 @@
+node_modules/
+.env
+dist/
+build/
+.vscode/
+*.log
+output.txt
+scratch_*.js
+setup-admin.js
