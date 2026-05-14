@@ -10,7 +10,7 @@ const getProducts = async (req, res) => {
   try {
     const { category, section: sectionSlug } = req.query;
     let query = {};
-    
+
     if (category) {
       query.category = category;
     }

@@ -7,7 +7,7 @@ const Product = require('../models/Product');
 const getCategories = async (req, res) => {
   try {
     const categories = await Category.find({});
-    
+
     // Get product count for each category
     const categoriesWithCount = await Promise.all(
       categories.map(async (category) => {
