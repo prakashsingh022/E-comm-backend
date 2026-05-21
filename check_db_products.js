@@ -10,7 +10,7 @@ const check = async () => {
     await mongoose.connect(process.env.MONGO_URI);
     console.log('Connected to MongoDB');
 
-    
+    const products = await Product.find({}).populate('section');
     console.log(`Found ${products.length} products`);
 
     products.forEach(p => {

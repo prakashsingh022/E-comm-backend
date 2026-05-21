@@ -47,25 +47,7 @@ const createBanner = async (req, res) => {
 // @desc    Update a banner
 // @route   PUT /api/banners/:id
 // @access  Private/Admin
-const updateBanner = async (req, res) => {
-  try {
-    const banner = await Banner.findById(req.params.id);
 
-    if (banner) {
-      banner.title = req.body.title || banner.title;
-      banner.image = req.body.image || banner.image;
-      banner.link = req.body.link || banner.link;
-      banner.isActive = req.body.isActive !== undefined ? req.body.isActive : banner.isActive;
-
-      const updatedBanner = await banner.save();
-      res.json(updatedBanner);
-    } else {
-      res.status(404).json({ message: 'Banner not found' });
-    }
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
 
 // @desc    Delete a banner
 // @route   DELETE /api/banners/:id
